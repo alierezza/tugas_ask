@@ -1,0 +1,49 @@
+<div class="title_page">
+  <span class="fa-stack">
+    <i class="fa fa-square-o fa-stack-2x outer-stack"></i>
+    <i class="fa fa-briefcase fa-stack-1x inner-stack"></i>
+  </span>
+  <span class="header_page">Regression</span>
+  <ol class="breadcrumb">
+    <li class="nonactive"> ASK</li>
+    <li class="active">Regression List</li>
+  </ol>
+</div>
+
+    <div class="panel panel-darkgrey">
+      <div class="panel-head">
+        <i class="fa fa-briefcase"></i>
+        <span class="panel-title"><b>Regression List</b></span>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8">
+              <%= link_to regressions_path(state: 'print'), class: "btn btn-primary btn-sm" do %><span class="glyphicon glyphicon-plus"></span> calculate<% end %>
+            
+            </div>
+            
+          </div>
+        </div>
+
+        <p>Regresi merupakan sebuah metode yang digunakan untuk mengetahui sejumlah faktor independent  yang mempengaruhi sebuah faktor dependent. Dalam kasus ini, penulis ingin mengtahui harga jual mobil bekas Honda All-New Civic di daerah Surabaya dan sekitar. Terdapat macam-macam faktor yang diduga mempengaruhi harga jual mobil bekas, yaitu usia dari mobil tersebut, dan jumlah jarak tempuh dari mobil tersebut. Berdasarkan hasil perhitungan dari data sample yang telah dikumpulkan sebanyak 20 data, sebagai berikut :</p>
+        <table class="table table-custom">
+          <thead>
+            <tr>
+              <td>Harga (jt)</td>
+              <td>Tahun</td>
+              <td>Kilometer</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @regressions.each do |reg| %>
+            <tr>
+              <td><%= reg.harga %></td>
+              <td><%= reg.tahun %></td>
+              <td><%= reg.km %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>

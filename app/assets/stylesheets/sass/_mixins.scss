@@ -1,0 +1,44 @@
+$basic_green: #C5E907;
+$basic_green2 : #A8C708;
+$border-color : rgba(37, 37, 37, 0.5);
+$background-transparent : rgba(43, 43, 43, 0.6);
+
+@mixin title_row($width){
+  font-weight: bold;
+  text-align: right;
+  width: $width;
+  float: left;
+  padding: 5px;
+  background-color: rgba(37, 37, 37, 0.67);
+  margin: 3px 0px;
+}
+
+@mixin data_row($width){
+  width: $width - 2;
+  float: left;
+  padding: 5px;
+  margin: 3px 0px;
+  margin-left: 2px;
+}
+
+.transition {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.rotate {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.float_menu {
+  position: absolute;
+  z-index: 1028;
+  left: 50px;
+  width: 176px;
+  display: block;
+}

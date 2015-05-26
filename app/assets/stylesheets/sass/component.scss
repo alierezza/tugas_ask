@@ -1,0 +1,365 @@
+@import "mixins";
+
+.fa-stack {
+  margin-right: 7px;
+
+  .inner-stack {
+    color: black;
+  }
+
+  .outer-stack {
+    color: $basic_green2;
+  }
+}
+
+.panel{
+  border-radius: 0px;
+
+  &.panel-darkgrey{
+    border: none;
+    color: white;
+    background-color: rgba(53, 53, 53, 0.6);
+    // box-shadow: 0px 0px 10px rgb(218, 215, 215);
+
+    .panel-body {
+      padding-bottom: 0px;
+    }
+  }
+  .panel-head{
+    padding-left: 0px;
+    border-bottom: 1px solid $border-color;
+
+    i {
+      padding: 13px;
+      border-right: solid 1px $border-color;
+      margin-right: 5px;
+    }
+  }
+
+  a, a:hover{
+    color: white;
+  }
+
+  hr {
+    margin-bottom: 0px;
+    border-color: $border-color;
+  }
+
+}
+
+.table-custom {
+  border: solid 1px #3A3A3A;
+
+  thead {
+    background-color: rgba(37, 37, 37, 0.67);
+
+    &>tr>th {
+    border-bottom: none;
+    }
+  }
+
+  td {
+    border-right: solid 1px #3a3a3a;
+    // text-align: center;
+  }
+
+  td a{
+    // width: 35%;
+  }
+
+  &>tbody>tr>td {
+    border-top: 1px solid #BDB3B3;
+  }
+
+  input {
+    // text-align: right;
+  }
+
+  &.lor-table {
+    .right-border {
+      border-right: none;
+    }
+  }
+}
+
+
+.btn:hover, .btn:active, .btn:visited, .btn:focus {
+  outline: none !important;
+}
+
+.btn-primary {
+  background-color: rgba(43, 43, 43, 0.41);
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover, &:active, &:visited, &:focus {
+    background-color: #313131;
+    border-color: rgba(255, 255, 255, 0.5);
+
+  }
+
+  &[disabled] {
+    background-color: #717171;
+    border-color: #717171;
+  }
+}
+
+.btn-default-custom {
+  background-color: transparent;
+  border-color: $border-color;
+  color: white;
+  &:hover, &:active, &:visited, &:focus {
+    background-color: rgb(201, 201, 201);
+    border-color: $border-color;
+  }
+}
+
+.btn-danger {
+  background-color: transparent;
+  border-color: #222222;
+
+  &:hover, &:active, &:visited, &:focus {
+    background-color: rgba(204, 5, 5, 0.41);
+    border-color: #222222;
+  }
+}
+
+.btn-login {
+  padding: 12px;
+  background-color: transparent;
+  border-top: solid 2px $border-color;
+
+  &:hover, &:active, &:visited, &:focus {
+    background-color: rgba(48, 46, 46, 0.48);
+    color: white;
+    outline: transparent
+  }
+}
+
+.bottom-field {
+
+  .btn-primary {
+    margin-right: -15px;
+    border: none;
+    padding: 10px 30px;
+  }
+
+  .btn-default-custom, .btn-danger {
+    padding: 10px 30px;
+    margin-right: -5px;
+    border-top: none;
+    border-bottom: none;
+  }
+
+}
+
+.modal-header {
+  padding: 5px 5px 5px 15px;
+
+  button:hover {
+    border-left-color: #444;
+  }
+}
+.modal-header .close {
+  margin-top: -5px;
+  /* margin-right: 9px; */
+  padding: 7px;
+  padding-left: 12px;
+  border-left: solid 1px #444;
+
+}
+
+#modal_add_vendor {
+  .modal-dialog, .modal-content {
+    width: 750px;
+  }
+
+}
+
+.custom-tab {
+  list-style: none;
+  display: inline-flex;
+  width: 100%;
+  li.custom-nav {
+    width: 20%;
+    text-align: center;
+
+    &:first-child:before{
+      max-width: 51%;
+      left: 50%;
+    }
+    &:last-child:before{
+      max-width: 51%;
+
+    }
+
+    &.active a{
+      background-color: $basic_green2;
+      color: rgb(53, 53, 53);
+    }
+    &:before {
+      border-top: 3px solid #DCDCDD;
+      content: "";
+      display: block;
+      position: relative;
+      top: 11px;
+      width: 100%;
+      z-index: 0;
+    }
+    a{
+      position: relative;
+      z-index: 0;
+      background-color: rgb(37, 37, 37);
+      padding: 1px 8px;
+      border: solid rgb(53, 53, 53);
+    }
+    span.text_nav {
+        display: block;
+        margin-top: 5px;
+        max-width: 100%;
+        font-size: 14px;
+      }
+  }
+}
+
+#myTab {
+  border-bottom: none !important;
+  li{
+    background-color: rgba(40, 40, 40, 0.35);
+    border-right: solid 1px #3C3C3C;
+    &.active, &.active a {
+      background-color: $background-transparent;
+      border: none;
+      border-radius: 0px;
+    }
+    &.active {
+      padding-bottom: 1px;
+    }
+
+
+    a {
+      padding: 5px 15px !important;
+      position: relative;
+      display: block;
+      color: white;
+
+      &:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+}
+.tab-content.show_custom {
+  padding: 10px;
+  border: solid 1px $border-color;
+  table {
+    margin: 0px;
+  }
+
+
+}
+
+.pagination {
+  margin: 0px;
+  margin-bottom: 10px;
+
+  li>a, .disabled>a {
+    color: #fff;
+    background-color: transparent;
+    border-color: $border-color;
+  }
+  &>.active>a {
+    background-color: $background-transparent;
+    border-color: $border-color;
+
+    &:hover {
+      background-color: #4A4A4A;
+      border-color: $border-color;
+    }
+  }
+}
+.modal .pagination{
+  a, a:hover{
+    color: #696969;
+  }
+
+  li.active a {color: #fff;}
+}
+
+.modal-lg {
+  width: 945px;
+}
+
+//--------------------- datatable ---------------------------//
+
+.table>thead>tr>th {
+  border-bottom: none;
+}
+
+table.dataTable tbody tr {
+  background-color: transparent !important;
+
+  td {
+    border-left: solid 1px $border-color;
+    &:last-child{
+      border-right: solid 1px $border-color;
+    }
+  }
+}
+.dataTables_info{ 
+color: white !important;
+}
+
+.border-side {
+  border: solid 1px rgb(37,37,37);
+  border-right: none;
+}
+
+.dataTables_paginate {
+  margin-top: 10px;
+}
+
+.dataTables_filter { display: none; }
+
+.dataTables_wrapper .dataTables_paginate {
+
+  .paginate_button{
+    @extend .border-side;
+    @extend .dataTables_info;
+    margin: 0px;
+
+    &.current {
+      @extend .border-side;
+      @extend .dataTables_info;
+      background: none;
+      background-color: $border-color !important;
+
+      &:hover {
+        @extend .border-side;
+      }
+    }
+
+    &.disabled {
+      display: none;
+    }
+    &:hover{
+      color: black !important;
+      @extend .border-side;
+      background: none;
+      background-color: white;
+    }
+
+    &.next, &.next:hover {
+      // border-right: solid 1px rgb(37,37,37);
+      border: solid 1px rgb(37,37,37);
+    }
+  }
+  .ellipsis {
+    @extend .border-side;
+    padding: 8px 1em;
+  }
+}
+
+#monthly_item thead{
+  background-color: $border-color;
+}

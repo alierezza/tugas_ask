@@ -1,0 +1,20 @@
+
+Call:
+lm(formula = harga ~ km + tahun, data = reg_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-68.996 -11.775   1.246   7.640  44.550 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.450e+02  1.677e+01  20.568 1.89e-13 ***
+km          -3.635e-04  4.251e-04  -0.855    0.404    
+tahun       -1.862e+01  2.854e+00  -6.523 5.21e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 25.86 on 17 degrees of freedom
+Multiple R-squared:  0.7839,	Adjusted R-squared:  0.7585 
+F-statistic: 30.84 on 2 and 17 DF,  p-value: 2.208e-06
+

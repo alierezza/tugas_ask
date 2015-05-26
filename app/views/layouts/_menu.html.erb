@@ -1,0 +1,116 @@
+<aside id="sidebar" class="sidebar radius">
+<ul class="nav-list" >
+  <li class="user_login">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+    </span>
+    <div class="info">
+    Ali Reza Yudhistira
+    <div class="thumb">
+      
+    </div>
+  </div>
+  </li>
+
+  <li class='hsub open'>
+    <%= link_to regressions_path do %>
+      <div class="link">
+        <span class="fa-stack">
+          <i class="fa fa-square fa-stack-2x outer-stack"></i>
+          <i class="fa fa-list fa-stack-1x inner-stack"></i>
+        </span>
+        <div class='mini_menu_label'>Regression</div>
+        <span class='label_menu'>Regression</span>
+      </div>
+    <% end %>
+    <ul class="submenu" %>
+     <%= link_to regressions_path, style: "padding-left: 0px;" do %><li class="label_mini">Regressions</li><% end %>
+    </ul>
+  </li>
+  <li class='hsub open'>
+    <%= link_to markovs_path do %>
+      <div class="link">
+        <span class="fa-stack">
+          <i class="fa fa-square fa-stack-2x outer-stack"></i>
+          <i class="fa fa-list fa-stack-1x inner-stack"></i>
+        </span>
+        <div class='mini_menu_label'>Markov</div>
+        <span class='label_menu'>Markov</span>
+      </div>
+    <% end %>
+    <ul class="submenu" %>
+     <%= link_to markovs_path, style: "padding-left: 0px;" do %><li class="label_mini">Markov</li><% end %>
+    </ul>
+  </li>
+  <div class="sidebar-toggle" id="sidebar-collapse">
+    <a class='link_toggle'><i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i></a>
+  </div>
+</ul>
+
+
+</aside>
+
+<script>
+
+$(function() {
+  function collapse(){
+    var Accordion = function(el, multiple) {
+    this.el = el || {};
+    this.multiple = multiple || false;
+
+    // Variables privadas
+    var links = this.el.find('.link');
+    // Evento
+    links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+    }
+
+    Accordion.prototype.dropdown = function(e) {
+      var $el = e.data.el;
+        $this = $(this),
+        $next = $this.next();
+
+      $next.slideToggle();
+      $this.parent().toggleClass('open');
+
+      if (!e.data.multiple) {
+        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+      };
+    }
+
+    var accordion = new Accordion($('#sidebar'), false);
+  }
+  
+  collapse();
+
+  var width = $(window).width();
+
+  if (width < 1280) {
+    $(".inner_body").addClass('mini_menu');
+    $(".nav-list").addClass('mini_menu');
+    $(".submenu").addClass('mini_menu');
+    $(".submenu").removeAttr('style');
+    $("li.hsub .link").attr("style", "pointer-events: none;")
+  }
+
+  $(".link_toggle").click(function(){
+    if($(".nav-list").hasClass('mini_menu')==true){
+      // $("li.hsub .link").bind("click");
+      $(".nav-list").removeClass('mini_menu');
+      $(".submenu").removeClass('mini_menu');
+      $(".inner_body").removeClass('mini_menu');
+      $("li.hsub .link").removeAttr("style")   
+      
+    }else {
+      $(".inner_body").addClass('mini_menu');
+      $(".nav-list").addClass('mini_menu');
+      $(".submenu").addClass('mini_menu');
+      // $("li.hsub .link").unbind("click");
+      $(".submenu").removeAttr('style');
+      $("li.hsub .link").attr("style", "pointer-events: none;")
+    }
+  });
+
+});
+
+</script>

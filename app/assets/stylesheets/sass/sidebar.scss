@@ -1,0 +1,241 @@
+@import "mixins";
+
+.sidebar {
+  overflow-y: auto;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  left: 0;
+
+   ul.nav-list {
+    width: 235px;
+    padding-left: 0px;
+    list-style: none;
+    background-color: $background-transparent;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    position: fixed;
+    height: 100% !important;
+    top: 0;
+   }
+
+  .link {
+    cursor: pointer;
+    display: block;
+    padding: 7px 22px;
+    color: #dfdfdf;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #8A8989;
+    position: relative;
+    @extend .transition;
+
+    &:hover {
+      color: white;
+
+      .fa-stack .outer-stack {
+        color: $basic_green;
+      }
+    }
+
+    .mini_menu_label{
+      font-size: 10px;
+      width: 28px;
+      text-align: center;
+    }
+    
+  }
+
+  .submenu {
+    display: none;
+    background: #292929;
+    font-size: 14px;
+    list-style: none;
+    padding-left: 0px;
+
+    li { border-bottom: 1px solid #4e4e4e; }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #d9d9d9;
+      padding: 2px;
+      padding-left: 42px;
+      -webkit-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #505050;
+        color: #FFF;
+      }
+    }
+  }
+
+  .sidebar-toggle {
+    padding: 18px 0px;
+    text-align: right;
+  }
+
+  li.label_mini {display: none;}
+
+///////////////////////////////////////////////////////////////
+  .panel-group .panel+.panel {
+    margin-top: 0px;
+
+  }
+  .panel-menu {
+    border-color: rgba(60, 60, 60, 0.67);
+    cursor: pointer;
+  }
+  .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: none;
+  }
+  .panel {
+    border-radius: 0px;
+    background-color: transparent;
+  }
+  .panel-body {
+    background-color: #292929;
+    padding: 0px;
+
+    a {
+      display: list-item;
+      list-style: none;
+      padding: 1px;
+      padding-left: 38px;
+      color: white;
+
+      &:hover {
+        background-color: #3f3f3f;
+        text-decoration: none;
+      }
+    }
+  }
+  .panel-menu>.panel-heading {
+    color: #A8A8A8;
+    border-radius: 0px;
+    font-size: 15px;
+
+    &:hover {
+      color: #f8f8f8;
+      .outer-stack{
+        color: $basic_green;
+      }
+    }
+  }
+  .panel-title {
+    font-size: 14px;
+  }
+
+
+
+  .title {
+    background-color: $basic_green;
+    padding: 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+
+    hr {
+      margin: 0px;
+      border: solid 1px #575757;
+    }
+
+    div {
+      text-align: right;
+      font-size: 14px;
+      letter-spacing: 4px;
+    }
+  }
+
+  .info {
+    float: left;
+  }
+  .user_login {
+    background: white;
+    padding: 10px 0px 10px 18px;
+    height: 55px;
+
+    .fa-stack {
+      float: left;
+    }
+    a {
+      margin-right: 5px;
+      color: black;
+    }
+  }
+
+  a.link_toggle {
+    color: black;
+    font-size: 18px;
+    /* border-radius: 50%; */
+    border: solid 1px #ccc;
+    padding: 6px 12px;
+    text-align: right;
+    cursor: pointer;
+    background-color: #DBDBDB;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+}
+
+.mini_menu_label {display: none;}
+
+ul.nav-list.mini_menu {
+  width: 50px;
+  @extend .transition;
+  z-index: 1;
+
+  li.label_mini {
+    display: block;
+    background-color: #ccc;
+    color: rgb(56, 56, 56);
+    letter-spacing: 5px;
+    padding: 12px;
+    font-size: 18px;
+    border: solid;
+    padding-left: 16px;
+    margin-top: -10px;
+  }
+    li.hsub:hover {
+
+    .submenu.mini_menu {
+      @extend .transition;
+      @extend .float_menu;
+      margin-top: -45px;
+
+      li a {
+        padding-left: 30px;
+      }
+    }
+
+  }
+
+  li.user_login:hover .info{
+    @extend .float_menu;
+    background-color: white;
+    top: 0;
+    padding: 7.5px 0px;
+    padding-left: 15px;
+  }
+  .label_menu, .info {display: none;}
+  .mini_menu_label {display: block;}
+  .link {
+    padding-left: 11px;
+    @extend .transition;
+  }
+  .user_login {
+    padding-left: 7px;
+    @extend .transition;
+  }
+
+  a.link_toggle i{
+    @extend .rotate;
+  }
+}
+
+.inner_body.mini_menu {
+  margin-left: 65px;
+  @extend .transition;
+  z-index: -1;
+}
